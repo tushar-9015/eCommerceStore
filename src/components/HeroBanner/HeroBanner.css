@@ -1,0 +1,46 @@
+.heroBanner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: calc(100vh - 50px);
+    gap: 100px;
+    
+}
+
+.heroBanner-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.heroBanner-tagLine {
+    font-size: 35px;
+    font-weight: 800;
+    color: rgb(32, 31, 31);
+    align-items: center;
+    justify-content: center; 
+}
+
+.color-red {
+    color: red;
+}
+
+button {
+    display: flex;
+    background-color: red;
+    color:  rgb(32, 31, 31);
+    border: none;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+.hero-image {
+    border-radius: 0 0 0 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    max-height: 100%;
+    width: auto;
+}
