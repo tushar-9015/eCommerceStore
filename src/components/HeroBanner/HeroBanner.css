@@ -25,7 +25,7 @@
     color: red;
 }
 
-button {
+.explore-btn {
     display: flex;
     background-color: red;
     color:  rgb(32, 31, 31);

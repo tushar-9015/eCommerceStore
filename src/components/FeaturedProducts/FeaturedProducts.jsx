@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../Card/Card';
 import axios from 'axios';
+import './FeaturedProducts.css'
 
 
 const FeaturedProducts = () => {
@@ -27,10 +28,11 @@ setData(res.data.data);
   },[])
 
   return (
-    <div className='feature-products'>
+    <div className='featured-products'>
       <h2>Featured Products</h2>
       <div className='featured-products-bottom'>
-       {data.map((item) => (
+       {data.map((item, index) => 
+       index < 4 && (
         <Card item={item} key={item.id}/>
        ))} 
       </div>
