@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroBanner from '../components/HeroBanner/HeroBanner'
-import FeaturedProducts from '../components/FeaturedProducts.jsx/FeaturedProducts'
+import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts'
 
 const Home = () => {
   return (
