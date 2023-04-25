@@ -1,0 +1,36 @@
+.contact {
+    display: flex;
+    height: 10vh;
+    padding: 12px;
+    background-color: rgb(244, 218, 152);
+    justify-content: center;
+}
+
+.contact-wrapper {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-wrapper-mail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-wrapper-mail input{
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.contact-wrapper-mail button{
+    padding: 10px;
+    color: white;
+    background-color: #333;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    cursor: pointer;
+}
+
