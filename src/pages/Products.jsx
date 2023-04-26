@@ -1,14 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
+import useFetch from '../utilis/useFetch'
+import { useParams } from 'react-router-dom'
 
 const Products = () => {
+  const catId = parseInt(useParams().id);
+  const [maxPrice, setMaxPrice] = useState(1000);
+  const [sort, setSort] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState([]);
+
+  const {data, loading, error } = useFetch(`categories?[filter][categories][id][$eq]= ${catId}`);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+
+    setSelectedCategory(
+      isChecked ? [...selectedCategory, value] : selectedCategory.filter((item) => item !== value)
+    );
+  };
+
+  console.log(selectedCategory);
+
   return (
     <div className='products'>
       <div className='products-left-side'>
       <div className='product-category'>
         <h2>Product Categories</h2>
-        <input type='checkbox' id='apple' value='apple' />
-        <label htmlFor='apple'>Men</label>
+        {data?.map((item) => (
+          <div className='input-item' key={item.id}>
+           <input type='checkbox' id={item.id} value={item.id} onChange={handleChange} />
+        <label htmlFor={item.id}>{item.attributes.title}</label>
       </div>
+        ))}
+    </div>
+        
       <div className='price-filter'>
         <h2>Price Filter</h2>
         <div className='price-filter-input'>

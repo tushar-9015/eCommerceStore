@@ -10,6 +10,7 @@ const FeaturedProducts = () => {
   )
 
 
+
   return (
     <div className='featured-products'>
       <h2>Featured Products</h2>

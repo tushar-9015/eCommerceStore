@@ -4,10 +4,12 @@ import './Card.css';
 
 
 const Card = ({item}) => {
+  const ImgUrl = import.meta.env.VITE_REACT_APP_API_UPLOAD_URL + item.attributes.img.data.attributes.url;
+
   return (
-    <Link className='link' to={`/products/${item.id}`}>
+    <Link className='link' to={`/product/${item.id}`}>
     <div className='card'>
-      <img className='card-img' src={import.meta.env.REACT_APP_API_UPLOAD_URL + item.attributes.img.data.attributes.url} alt=''/>
+      <img className='card-img' src={ImgUrl} alt=''/>
       <h3 className='product-name'>{item?.attributes.title}</h3>
       <span className='price'>₹{item?.attributes.price}</span>  
     </div>

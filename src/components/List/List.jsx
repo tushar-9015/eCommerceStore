@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './List.css';
 import Card from '../Card/Card';
+import { useParams } from 'react-router-dom';
 
-const List = ({item}) => {
+const List = () => {
+
     
   return (
     <div className='list'>
