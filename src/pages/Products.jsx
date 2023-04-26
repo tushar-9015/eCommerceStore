@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
-import useFetch from '../utilis/useFetch'
-import { useParams } from 'react-router-dom'
+import React, {useState} from 'react';
+import useFetch from '../utilis/useFetch';
+import { useParams } from 'react-router-dom';
+import List from '../components/List/List';
 
 const Products = () => {
   const catId = parseInt(useParams().id);
@@ -38,24 +39,28 @@ const Products = () => {
         <h2>Price Filter</h2>
         <div className='price-filter-input'>
           <span>0</span>
-          <input type='range' min={0} max={1000} />
-          <span>1000</span>
+          <input type='range' min={0} max={1000} onChange={(e) => setMaxPrice(e.target.value)}/>
+          <span>{maxPrice}</span>
         </div>
         </div>
         <div className='sort-by'>
           <h2>Sort by</h2>
           <div className='sort-by-input'>
-            <input type='radio' id='asc' name='price' />
+            <input type='radio' id='asc' name='price' onChange={(e)=> setSort('asc')}/>
             <label htmlFor='asc'>Price (Lowest first)</label>
           </div>
           <div className='sort-by-input'>
-            <input type='radio' id='desc' name='price' />
+            <input type='radio' id='desc' name='price' onChange={(e)=> setSort('desc')} />
             <label htmlFor='desc'>Price (Highest first)</label>
           </div>
         </div>
       
       </div>
-      
+      <div className='products-right-side'>
+        <div>
+          <List catId={catId} maxPrice={maxPrice} sort={sort} selectedCategory={selectedCategory} />
+        </div>
+      </div>
     </div>
   )
 }
