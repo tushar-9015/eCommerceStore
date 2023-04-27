@@ -6,6 +6,7 @@ import Products from './pages/Products/Products'
 import Cart from './pages/Cart/Cart'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
+import Product from './pages/Product/Product'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/products/:id" element={<Products />} />
       <Route path='cart' element={<Cart />} />
+      <Route path='/product/:id' element={<Product />} />
     </Routes>
       <Footer /> 
     </div>
