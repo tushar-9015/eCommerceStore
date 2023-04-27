@@ -1,25 +1,37 @@
 import React, {useState} from 'react'
+import { useParams } from 'react-router-dom';
+import useFetch from '../../utilis/useFetch';
+import './Product.css'
 
 const Product = () => {
+  const id = useParams().id
   const [quantity, setQuantity] = useState(1);
+
+  const {data, loading, error } = useFetch(
+    `/products/${id}?populate=*`
+  )
   return (
     <div className='product'>
+      {loading ? "loading " : (
+        <> 
       <div className='product-left-side'>
-        <img src='https://images.pexels.com/photos/15883360/pexels-photo-15883360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' />
+        <img src={import.meta.env.VITE_REACT_APP_API_UPLOAD_URL + data?.attributes?.img?.data?.attributes?.url} />
       </div>
       <div className='product-right-side'>
-        <h1>title</h1>
-        <span className='price'>1</span>
-        <p className='desc'>fsdcwncw nfwudncn</p>
+        <h1>{data?.attributes?.title}</h1>
+        <span className='price'>₹{data?.attributes?.price}</span>
+        <p className='desc'>{data?.attributes?.desc}</p>
         <div className='product-quantity'>
-          <button>-</button>
+          <button onClick={() => setQuantity((prev) => prev === 1 ? 1 : prev - 1)}>-</button>
           {quantity}
-          <button>+</button>
+          <button onClick={()=> setQuantity((prev) => prev + 1)}>+</button>
         </div>
-        <button className='add-to-cart'>
+        <button className='product-quantity-add'>
           add to cart
         </button>
       </div>
+      </>
+      )}
     </div>
   )
 }
