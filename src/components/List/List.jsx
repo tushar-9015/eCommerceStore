@@ -6,9 +6,10 @@ import useFetch from '../../utilis/useFetch';
 const List = ({selectedCategory, sort, catId, maxPrice}) => {
 
   const {data, loading, error} = useFetch(
-    `/products?populate=*&[filter][categories][id] = ${catId}${selectedCategory.map(
-      (item) => `&[filters][categories][id][$eq]=${item}`)}`
-  )
+    `/products?populate=*&[filter][categories][id]= ${catId}${selectedCategory.map(
+      (item) => `&[filters][categories][id][$eq]=${item}`
+    )}&[filters][price][$lte]=${maxPrice}${sort !== null ? `&sort=price:${sort}`: ''}`
+  );
 
     
   return (

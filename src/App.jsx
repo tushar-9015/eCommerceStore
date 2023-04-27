@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Footer from './components/Footer'
-import Products from './pages/Products'
+import Products from './pages/Products/Products'
 import Cart from './pages/Cart/Cart'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
