@@ -1,7 +1,8 @@
 .nav-container {
     display: flex;
     height: 50px;
-    /* background-color: aqua; */
+    margin-bottom: 20px;
+    align-content: center;
 }
 
 .nav-wrapper {
@@ -13,9 +14,10 @@
 }
 
 .nav-wrapper-item  {
-    color: rgb(172, 125, 64);
+    color: rgb(122, 108, 71);
     text-decoration: none;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 500;
+    
 
 }

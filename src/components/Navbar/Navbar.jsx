@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className='nav-container'>
             <div className='nav-wrapper'>
               <div className='nav-wrapper-item'>
-              <Link className='link' to='/'>Logo</Link>
+              <Link className='link' to='/'>Shoe Store</Link>
               </div>
               <div className='nav-wrapper-item'>
               <Link className='link' to='/products/:id'>Products</Link>

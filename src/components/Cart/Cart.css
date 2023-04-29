@@ -4,7 +4,7 @@
     right: 20px;
     top: 80px;
     z-index: 999;
-    background-color: white;
+    background-color: rgb(223, 223, 223);
     padding: 20px;
     -webkit-box-shadow: 0px 0px 7px -5px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0px 7px -5px rgba(0, 0, 0, 0.5);
@@ -43,7 +43,7 @@
   }
   
   .cart-item-price {
-      color: #2879fe;
+      color: rgb(122, 108, 71);
   
   }
   
@@ -70,7 +70,7 @@
       gap: 20px;
       cursor: pointer;
       border: none;
-      background-color: #2879fe;
+      background-color: rgb(122, 108, 71);
       color: white;
       font-weight: 500;
       margin-bottom: 20px;
