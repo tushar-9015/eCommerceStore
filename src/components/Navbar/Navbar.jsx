@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import Cart from '../Cart/Cart';
 
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
   return (
         <div className='nav-container'>
             <div className='nav-wrapper'>
@@ -13,10 +15,11 @@ const Navbar = () => {
               <div className='nav-wrapper-item'>
               <Link className='link' to='/products/:id'>Products</Link>
               </div>
-              <div className='nav-wrapper-item'>
-              <Link className='link' to='cart'>Cart</Link>
+              <div className='nav-wrapper-item'  onClick={() => setOpen(!open)}>
+                Cart
               </div>
-            </div>    
+            </div>   
+            {open && <Cart />} 
         </div>
   )
 }

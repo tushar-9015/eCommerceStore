@@ -2,10 +2,14 @@ import React, {useState} from 'react'
 import { useParams } from 'react-router-dom';
 import useFetch from '../../utilis/useFetch';
 import './Product.css'
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/cartReducer';
 
 const Product = () => {
   const id = useParams().id
   const [quantity, setQuantity] = useState(1);
+
+  const dispatch = useDispatch()
 
   const {data, loading, error } = useFetch(
     `/products/${id}?populate=*`
@@ -26,7 +30,16 @@ const Product = () => {
           {quantity}
           <button onClick={()=> setQuantity((prev) => prev + 1)}>+</button>
         </div>
-        <button className='product-quantity-add'>
+        <button className='product-quantity-add' onClick={() => 
+        dispatch(
+          addToCart({
+            id: data.id,
+            title: data.attributes.title,
+            desc: data.attributes.desc,
+            price: data.attributes.price,
+            img: data.attributes.img.data.attributes.url,
+            quantity,
+          }))}>
           add to cart
         </button>
       </div>
