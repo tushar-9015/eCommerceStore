@@ -1,47 +1,31 @@
 .heroBanner {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
     height: calc(100vh - 50px);
-    gap: 100px;
     
 }
 
 .heroBanner-left {
+    flex: 1;
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
     flex-direction: column;
 }
 
-.heroBanner-tagLine {
-    font-size: 35px;
-    font-weight: 800;
-    color: rgb(32, 31, 31);
-    align-items: center;
-    justify-content: center; 
-}
-
-.color-red {
-    color: red;
-}
-
-.explore-btn {
+.heroBanner-right {
+    flex: 1;
     display: flex;
-    background-color: red;
-    color:  rgb(32, 31, 31);
-    border: none;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    height: 25px;
-    margin: 10px;
-    padding: 10px;
+    align-items: flex-end;
+    position: relative;
 }
+
 .hero-image {
-    border-radius: 0 0 0 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-right: 60px;
-    max-height: 100%;
-    width: auto;
+    position: absolute;
+    overflow: hidden;
+    object-fit: cover;
+    background-color: greenyellow;
+    top: 0;
+    right: 30px;
+
 }
+
